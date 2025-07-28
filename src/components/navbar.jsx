@@ -5,33 +5,17 @@ const Navbar = () => {
 
   return (
     <nav className="bg-slate-800 shadow-md w-full fixed top-0 left-0 z-50">
+      {/* Navbar container */}
+      <div className="w-full flex flex-wrap items-center justify-between px-4 md:px-8 py-4">
 
-      
-      {/* Full-width container inside navbar */}
-      <div className="w-full flex items-center justify-between px-4 md:px-8 py-4 flex-wrap">
-        
         {/* Logo */}
-        <div className="text-xl font-bold text-white hover:text-amber-500 cursor-pointer">&lt;TableReserve&gt;</div>
-
-        {/* 🔍 Search Bar (Desktop) */}
-        <div className="hidden md:block flex-grow px-4 max-w-md w-full">
-          <input
-            type="text"
-            placeholder="Search Booking..."
-            className="w-full px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-          />
+        <div className="text-xl font-bold text-white hover:text-amber-500 cursor-pointer">
+          &lt;TableReserve&gt;
         </div>
-
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-gray-300 font-medium">
-          <li className="hover:text-amber-500 cursor-pointer">Home</li>
-          <li className="hover:text-amber-500 cursor-pointer">Reservations</li>
-          <li className="hover:text-amber-500 cursor-pointer">About</li>
-        </ul>
 
         {/* Hamburger Icon (Mobile) */}
         <div
-          className="md:hidden cursor-pointer ml-auto"
+          className="md:hidden cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -58,24 +42,31 @@ const Navbar = () => {
             )}
           </svg>
         </div>
+
+        {/* Search bar (Always visible) */}
+        <div className="w-full order-3 md:order-none mt-4 md:mt-0 md:w-auto flex-grow md:flex-grow-0 max-w-md">
+          <input
+            type="text"
+            placeholder="Search Booking..."
+            className="w-full px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          />
+        </div>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-6 text-gray-300 font-medium">
+          <li className="hover:text-amber-500 cursor-pointer">Home</li>
+          <li className="hover:text-amber-500 cursor-pointer">Reservations</li>
+          <li className="hover:text-amber-500 cursor-pointer">About</li>
+        </ul>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-slate-900 shadow-md md:hidden z-50">
-          <ul className="flex flex-col px-4 py-4 gap-4 text-gray-300 font-medium">
+        <div className="md:hidden bg-slate-900 px-4 py-4">
+          <ul className="flex flex-col gap-4 text-gray-300 font-medium">
             <li className="hover:text-amber-500 cursor-pointer">Home</li>
             <li className="hover:text-amber-500 cursor-pointer">Reservations</li>
             <li className="hover:text-amber-500 cursor-pointer">About</li>
-
-            {/* 🔍 Mobile Search */}
-            <li className="w-full mt-2">
-              <input
-                type="text"
-                placeholder="Search Booking..."
-                className="w-full px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-            </li>
           </ul>
         </div>
       )}
