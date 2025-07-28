@@ -28,7 +28,7 @@ const CentralPart = () => {
       <div className="absolute inset-0  bg-opacity-20 z-0"></div>
 
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-white">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-black fontstyle-poppins">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 rounded-lg bg-white/80 text-black shadow-lg backdrop-blur-sm  fontstyle-poppins">
           Discover & Book Your Table Instantly
         </h1>
 

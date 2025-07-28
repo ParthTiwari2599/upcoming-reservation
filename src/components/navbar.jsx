@@ -13,9 +13,18 @@ const Navbar = () => {
           &lt;TableReserve&gt;
         </div>
 
+        {/* Search bar (Always visible) */}
+        <div className="w-full mt-3 md:mt-0 md:w-1/2 md:mx-6 order-3 md:order-none">
+          <input
+            type="text"
+            placeholder="Search Booking..."
+            className="w-full px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          />
+        </div>
+
         {/* Hamburger Icon (Mobile) */}
         <div
-          className="md:hidden cursor-pointer"
+          className="md:hidden cursor-pointer order-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -41,15 +50,6 @@ const Navbar = () => {
               />
             )}
           </svg>
-        </div>
-
-        {/* Search bar (Always visible) */}
-        <div className="w-full order-3 md:order-none mt-4 md:mt-0 md:w-auto flex-grow md:flex-grow-0 max-w-md">
-          <input
-            type="text"
-            placeholder="Search Booking..."
-            className="w-full px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-          />
         </div>
 
         {/* Desktop Menu */}
